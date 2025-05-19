@@ -6,7 +6,7 @@ class UrlLauncherUtils {
     try {
       final Uri url = Uri.parse(urlString);
       final bool canLaunch = await launcher.canLaunchUrl(url);
-
+      
       if (canLaunch) {
         await launcher.launchUrl(url, mode: launcher.LaunchMode.externalApplication);
       } else {

@@ -43,9 +43,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
   void navigateToHome() {
     if (!mounted) return;
-
+    
     NavigationUtils.pushReplacementWithSlideTransition(
-      context,
+      context, 
       const HomePage(),
     );
   }

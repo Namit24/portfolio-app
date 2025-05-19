@@ -28,8 +28,8 @@ class AnimatedSkillChip extends StatelessWidget {
       visualDensity: VisualDensity.compact,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ).animate().fadeIn(duration: 600.ms, delay: delay.ms).scale(
-      begin: const Offset(0.8, 0.8),
-      end: const Offset(1, 1),
-    );
+          begin: const Offset(0.8, 0.8),
+          end: const Offset(1, 1),
+        );
   }
 }
