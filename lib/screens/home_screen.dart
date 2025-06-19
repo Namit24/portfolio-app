@@ -88,21 +88,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: PageView(
+      // OPTIMIZED PAGE VIEW FOR SMOOTH SCROLLING
+      body: PageView.builder(
         controller: _pageController,
         onPageChanged: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-        children: _sections.map((section) {
-          return section.animate().fadeIn(duration: 300.ms).slideX(
-            begin: 0.1,
-            end: 0,
-            duration: 400.ms,
-            curve: Curves.easeOutCubic,
+        // PERFORMANCE OPTIMIZATION
+        physics: const BouncingScrollPhysics(),
+        itemCount: _sections.length,
+        itemBuilder: (context, index) {
+          return _sections[index].animate().fadeIn(
+            duration: 200.ms,
+            curve: Curves.easeOut,
           );
-        }).toList(),
+        },
       ),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(16),
@@ -124,10 +126,11 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
                 _currentIndex = index;
               });
+              // SMOOTH PAGE TRANSITION
               _pageController.animateToPage(
                 index,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeInOutCubic,
               );
             },
             backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.95),

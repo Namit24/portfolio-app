@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static const Color primaryColor = Color(0xFF6366F1);
@@ -7,79 +8,6 @@ class AppTheme {
   static const Color surfaceColor = Color(0xFFFAFAFA);
   static const Color cardColor = Color(0xFFFFFFFF);
 
-  // Using system fonts that are available on all devices
-  static const String fontFamily = 'SF Pro Display'; // iOS
-  static const String fallbackFont = 'Roboto'; // Android
-  
-  static TextTheme _buildTextTheme(Brightness brightness) {
-    final Color textColor = brightness == Brightness.light 
-        ? const Color(0xFF0F172A) 
-        : Colors.white;
-    
-    return TextTheme(
-      headlineLarge: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 32,
-        fontWeight: FontWeight.w800,
-        letterSpacing: -1.0,
-        color: textColor,
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-      headlineMedium: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 28,
-        fontWeight: FontWeight.w700,
-        letterSpacing: -0.5,
-        color: textColor,
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-      headlineSmall: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 24,
-        fontWeight: FontWeight.w600,
-        letterSpacing: -0.25,
-        color: textColor,
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-      titleLarge: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 20,
-        fontWeight: FontWeight.w600,
-        color: textColor,
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-      titleMedium: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
-        color: brightness == Brightness.light 
-            ? const Color(0xFF64748B) 
-            : const Color(0xFFE2E8F0),
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-      bodyLarge: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        height: 1.5,
-        color: brightness == Brightness.light 
-            ? const Color(0xFF475569) 
-            : const Color(0xFFCBD5E1),
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-      bodyMedium: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        height: 1.4,
-        color: brightness == Brightness.light 
-            ? const Color(0xFF64748B) 
-            : const Color(0xFF94A3B8),
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
-      ),
-    );
-  }
-
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
@@ -87,18 +15,58 @@ class AppTheme {
       brightness: Brightness.light,
       surface: surfaceColor,
     ),
-    textTheme: _buildTextTheme(Brightness.light),
+    // FIXED FONT CONFIGURATION
+    textTheme: GoogleFonts.interTextTheme().copyWith(
+      headlineLarge: GoogleFonts.inter(
+        fontSize: 32,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -1.0,
+        color: const Color(0xFF0F172A),
+      ),
+      headlineMedium: GoogleFonts.inter(
+        fontSize: 28,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.5,
+        color: const Color(0xFF0F172A),
+      ),
+      headlineSmall: GoogleFonts.inter(
+        fontSize: 24,
+        fontWeight: FontWeight.w600,
+        letterSpacing: -0.25,
+        color: const Color(0xFF0F172A),
+      ),
+      titleLarge: GoogleFonts.inter(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: const Color(0xFF0F172A),
+      ),
+      titleMedium: GoogleFonts.inter(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: const Color(0xFF475569),
+      ),
+      bodyLarge: GoogleFonts.inter(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        height: 1.5,
+        color: const Color(0xFF475569),
+      ),
+      bodyMedium: GoogleFonts.inter(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        height: 1.4,
+        color: const Color(0xFF64748B),
+      ),
+    ),
     scaffoldBackgroundColor: const Color(0xFFF8FAFC),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
       scrolledUnderElevation: 0,
-      titleTextStyle: TextStyle(
-        fontFamily: fontFamily,
+      titleTextStyle: GoogleFonts.inter(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: const Color(0xFF0F172A),
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
       ),
     ),
     cardTheme: CardThemeData(
@@ -118,10 +86,8 @@ class AppTheme {
         ),
         backgroundColor: primaryColor,
         foregroundColor: Colors.white,
-        textStyle: TextStyle(
-          fontFamily: fontFamily,
+        textStyle: GoogleFonts.inter(
           fontWeight: FontWeight.w600,
-          fontFamilyFallback: const [fallbackFont, 'sans-serif'],
         ),
       ),
     ),
@@ -134,18 +100,58 @@ class AppTheme {
       brightness: Brightness.dark,
       surface: const Color(0xFF0F172A),
     ),
-    textTheme: _buildTextTheme(Brightness.dark),
+    // FIXED DARK THEME FONTS
+    textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).copyWith(
+      headlineLarge: GoogleFonts.inter(
+        fontSize: 32,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -1.0,
+        color: Colors.white,
+      ),
+      headlineMedium: GoogleFonts.inter(
+        fontSize: 28,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.5,
+        color: Colors.white,
+      ),
+      headlineSmall: GoogleFonts.inter(
+        fontSize: 24,
+        fontWeight: FontWeight.w600,
+        letterSpacing: -0.25,
+        color: Colors.white,
+      ),
+      titleLarge: GoogleFonts.inter(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: Colors.white,
+      ),
+      titleMedium: GoogleFonts.inter(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: const Color(0xFFE2E8F0),
+      ),
+      bodyLarge: GoogleFonts.inter(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        height: 1.5,
+        color: const Color(0xFFCBD5E1),
+      ),
+      bodyMedium: GoogleFonts.inter(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        height: 1.4,
+        color: const Color(0xFF94A3B8),
+      ),
+    ),
     scaffoldBackgroundColor: const Color(0xFF020617),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
       scrolledUnderElevation: 0,
-      titleTextStyle: TextStyle(
-        fontFamily: fontFamily,
+      titleTextStyle: GoogleFonts.inter(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: Colors.white,
-        fontFamilyFallback: const [fallbackFont, 'sans-serif'],
       ),
     ),
     cardTheme: CardThemeData(
@@ -164,10 +170,8 @@ class AppTheme {
         ),
         backgroundColor: primaryColor,
         foregroundColor: Colors.white,
-        textStyle: TextStyle(
-          fontFamily: fontFamily,
+        textStyle: GoogleFonts.inter(
           fontWeight: FontWeight.w600,
-          fontFamilyFallback: const [fallbackFont, 'sans-serif'],
         ),
       ),
     ),

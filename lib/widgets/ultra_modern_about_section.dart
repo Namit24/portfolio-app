@@ -11,21 +11,24 @@ class UltraModernAboutSection extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: RadialGradient(
           center: Alignment.topLeft,
-          radius: 1.5,
+          radius: 1.8,
           colors: [
-            const Color(0xFF6366F1).withOpacity(0.05),
-            const Color(0xFF8B5CF6).withOpacity(0.03),
+            const Color(0xFF6366F1).withOpacity(0.08),
+            const Color(0xFF8B5CF6).withOpacity(0.05),
             Colors.transparent,
           ],
         ),
       ),
       child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        // OPTIMIZED SCROLLING PHYSICS
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
             const SizedBox(height: 20),
-            
+
             // Hero Profile Card
             PremiumGlassmorphicCard(
               isHoverable: true,
@@ -39,10 +42,16 @@ class UltraModernAboutSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(35),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withOpacity(0.3),
-                          blurRadius: 40,
-                          offset: const Offset(0, 20),
-                          spreadRadius: -10,
+                          color: const Color(0xFF6366F1).withOpacity(0.4),
+                          blurRadius: 50,
+                          offset: const Offset(0, 25),
+                          spreadRadius: -15,
+                        ),
+                        BoxShadow(
+                          color: const Color(0xFF8B5CF6).withOpacity(0.2),
+                          blurRadius: 80,
+                          offset: const Offset(0, 40),
+                          spreadRadius: -20,
                         ),
                       ],
                     ),
@@ -76,16 +85,13 @@ class UltraModernAboutSection extends StatelessWidget {
                       ),
                     ),
                   ).animate().scale(
-                    delay: 300.ms,
-                    duration: 1200.ms,
-                    curve: Curves.elasticOut,
-                  ).shimmer(
-                    delay: 1500.ms,
-                    duration: 2000.ms,
+                    delay: 200.ms,
+                    duration: 800.ms,
+                    curve: Curves.easeOutBack,
                   ),
-                  
+
                   const SizedBox(height: 32),
-                  
+
                   // Name with Gradient Text Effect
                   ShaderMask(
                     shaderCallback: (bounds) => const LinearGradient(
@@ -99,27 +105,27 @@ class UltraModernAboutSection extends StatelessWidget {
                       ),
                     ),
                   ).animate().slideY(
-                    delay: 600.ms,
-                    duration: 800.ms,
-                    begin: 30,
+                    delay: 400.ms,
+                    duration: 600.ms,
+                    begin: 20,
                     curve: Curves.easeOutCubic,
-                  ).fadeIn(delay: 600.ms),
-                  
+                  ).fadeIn(delay: 400.ms, duration: 600.ms),
+
                   const SizedBox(height: 12),
-                  
+
                   // Title with Animated Container
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                       ),
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withOpacity(0.3),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
+                          color: const Color(0xFF6366F1).withOpacity(0.4),
+                          blurRadius: 25,
+                          offset: const Offset(0, 12),
                         ),
                       ],
                     ),
@@ -132,13 +138,13 @@ class UltraModernAboutSection extends StatelessWidget {
                       ),
                     ),
                   ).animate().scale(
-                    delay: 800.ms,
-                    duration: 600.ms,
+                    delay: 600.ms,
+                    duration: 500.ms,
                     curve: Curves.easeOutBack,
                   ),
-                  
+
                   const SizedBox(height: 32),
-                  
+
                   // Animated Stats
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -150,17 +156,17 @@ class UltraModernAboutSection extends StatelessWidget {
                       _buildAnimatedStat(context, '15+', 'Skills', 2),
                     ],
                   ).animate().slideY(
-                    delay: 1000.ms,
-                    duration: 800.ms,
-                    begin: 40,
+                    delay: 800.ms,
+                    duration: 600.ms,
+                    begin: 30,
                     curve: Curves.easeOutCubic,
                   ),
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 32),
-            
+
             // About Description with Floating Animation
             PremiumGlassmorphicCard(
               isHoverable: true,
@@ -178,9 +184,9 @@ class UltraModernAboutSection extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFF06B6D4).withOpacity(0.3),
-                              blurRadius: 20,
-                              offset: const Offset(0, 8),
+                              color: const Color(0xFF06B6D4).withOpacity(0.4),
+                              blurRadius: 25,
+                              offset: const Offset(0, 10),
                             ),
                           ],
                         ),
@@ -215,19 +221,18 @@ class UltraModernAboutSection extends StatelessWidget {
                   const SizedBox(height: 24),
                   Text(
                     'I\'m a dedicated App & ML Developer with a passion for creating innovative solutions that bridge the gap between cutting-edge technology and user-friendly experiences.\n\n'
-                    'My journey in technology has led me to contribute to open-source projects like Scikit-Learn and develop cutting-edge applications in machine learning and mobile development.\n\n'
-                    'I believe in the power of technology to solve real-world problems and am constantly exploring new ways to push the boundaries of what\'s possible.',
+                        'My journey in technology has led me to contribute to open-source projects like Scikit-Learn and develop cutting-edge applications in machine learning and mobile development.\n\n'
+                        'I believe in the power of technology to solve real-world problems and am constantly exploring new ways to push the boundaries of what\'s possible.',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       height: 1.7,
-                      color: const Color(0xFF475569),
                     ),
                   ),
                 ],
               ),
             ).animate().slideY(
-              delay: 1200.ms,
-              duration: 800.ms,
-              begin: 50,
+              delay: 1000.ms,
+              duration: 600.ms,
+              begin: 40,
               curve: Curves.easeOutCubic,
             ),
           ],
@@ -265,7 +270,6 @@ class UltraModernAboutSection extends StatelessWidget {
         Text(
           label,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: const Color(0xFF64748B),
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -283,7 +287,7 @@ class UltraModernAboutSection extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [
             Colors.transparent,
-            const Color(0xFFE2E8F0).withOpacity(0.5),
+            const Color(0xFFE2E8F0).withOpacity(0.6),
             Colors.transparent,
           ],
         ),
