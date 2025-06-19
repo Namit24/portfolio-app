@@ -1,0 +1,164 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.namit.portfolio"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:4:22-64
+12
+13    <permission
+13-->[androidx.core:core:1.13.1] C:\Users\Namit\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+14        android:name="com.namit.portfolio.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.13.1] C:\Users\Namit\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.13.1] C:\Users\Namit\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.namit.portfolio.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.13.1] C:\Users\Namit\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.13.1] C:\Users\Namit\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+18
+19    <application
+20        android:name="android.app.Application"
+20-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:8:9-42
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.13.1] C:\Users\Namit\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+22        android:extractNativeLibs="true"
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:9:9-43
+24        android:label="Portfolio" >
+24-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:7:9-34
+25        <meta-data
+25-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:11:9-13:33
+26            android:name="flutterEmbedding"
+26-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:12:13-44
+27            android:value="2" />
+27-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:13:13-30
+28
+29        <activity
+29-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:15:9-30:20
+30            android:name="com.namit.portfolio.MainActivity"
+30-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:16:13-41
+31            android:exported="true"
+31-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:17:13-36
+32            android:launchMode="singleTop"
+32-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:18:13-43
+33            android:theme="@style/LaunchTheme"
+33-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:19:13-47
+34            android:windowSoftInputMode="adjustResize" >
+34-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:20:13-55
+35            <meta-data
+35-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:22:13-24:57
+36                android:name="io.flutter.embedding.android.NormalTheme"
+36-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:23:17-72
+37                android:resource="@style/NormalTheme" />
+37-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:24:17-54
+38
+39            <intent-filter android:autoVerify="true" >
+39-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:26:13-29:29
+39-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:26:28-53
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:27:17-68
+40-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:27:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:28:17-76
+42-->C:\Users\Namit\StudioProjects\portfolio\android\app\src\main\AndroidManifest.xml:28:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <!-- Remove this duplicate meta-data -->
+47        <!--
+48             <meta-data
+49            android:name="flutterEmbedding"
+50            android:value="2" />
+51        -->
+52        <activity
+52-->[:url_launcher_android] C:\Users\Namit\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.16\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-11:74
+53            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+53-->[:url_launcher_android] C:\Users\Namit\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.16\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-74
+54            android:exported="false"
+54-->[:url_launcher_android] C:\Users\Namit\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.16\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-37
+55            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+55-->[:url_launcher_android] C:\Users\Namit\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.16\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-71
+56
+57        <uses-library
+57-->[androidx.window:window:1.2.0] C:\Users\Namit\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+58            android:name="androidx.window.extensions"
+58-->[androidx.window:window:1.2.0] C:\Users\Namit\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+59            android:required="false" />
+59-->[androidx.window:window:1.2.0] C:\Users\Namit\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+60        <uses-library
+60-->[androidx.window:window:1.2.0] C:\Users\Namit\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+61            android:name="androidx.window.sidecar"
+61-->[androidx.window:window:1.2.0] C:\Users\Namit\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+62            android:required="false" />
+62-->[androidx.window:window:1.2.0] C:\Users\Namit\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+63
+64        <provider
+64-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+65            android:name="androidx.startup.InitializationProvider"
+65-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
+66            android:authorities="com.namit.portfolio.androidx-startup"
+66-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
+67            android:exported="false" >
+67-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
+68            <meta-data
+68-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+69-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+70                android:value="androidx.startup" />
+70-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Namit\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+71            <meta-data
+71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+72                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+73                android:value="androidx.startup" />
+73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+74        </provider>
+75
+76        <receiver
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+77            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+78            android:directBootAware="false"
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+79            android:enabled="true"
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+80            android:exported="true"
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+81            android:permission="android.permission.DUMP" >
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+83                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+86                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+87            </intent-filter>
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+89                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+92                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Namit\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+93            </intent-filter>
+94        </receiver>
+95    </application>
+96
+97</manifest>

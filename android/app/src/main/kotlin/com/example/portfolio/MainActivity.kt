@@ -1,5 +1,6 @@
-package com.example.portfolio
+package com.namit.portfolio
 
 import io.flutter.embedding.android.FlutterActivity
 
-class MainActivity : FlutterActivity()
+class MainActivity: FlutterActivity() {
+}
