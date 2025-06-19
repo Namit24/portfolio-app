@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../models/project.dart';
 import '../data/projects_data.dart';
-import 'glassmorphic_card.dart';
+import 'premium_glassmorphic_card.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -21,11 +21,13 @@ class ProjectsSection extends StatelessWidget {
         ),
       ),
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(20, 100, 20, 20), // FIXED: Top padding for app bar
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GlassmorphicCard(
+            // HEADER SECTION
+            PremiumGlassmorphicCard(
               child: Row(
                 children: [
                   Container(
@@ -42,7 +44,7 @@ class ProjectsSection extends StatelessWidget {
                       size: 28,
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: 16), // ORGANIZED: Consistent spacing
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,9 +53,9 @@ class ProjectsSection extends StatelessWidget {
                           'Selected Works',
                           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xFF1E293B),
                           ),
                         ),
+                        const SizedBox(height: 4), // ORGANIZED: Small spacing
                         Text(
                           'Featured projects & contributions',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -66,19 +68,22 @@ class ProjectsSection extends StatelessWidget {
                 ],
               ),
             ).animate().fadeIn(duration: 400.ms),
-            
-            const SizedBox(height: 24),
-            
+
+            const SizedBox(height: 24), // ORGANIZED: Section spacing
+
+            // PROJECTS LIST
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: ProjectsData.projects.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 20),
+              separatorBuilder: (context, index) => const SizedBox(height: 16), // ORGANIZED: Consistent spacing
               itemBuilder: (context, index) {
                 final project = ProjectsData.projects[index];
                 return _buildProjectCard(context, project, index);
               },
             ),
+
+            const SizedBox(height: 40), // ORGANIZED: Bottom padding
           ],
         ),
       ),
@@ -92,13 +97,15 @@ class ProjectsSection extends StatelessWidget {
       [const Color(0xFFEC4899), const Color(0xFF8B5CF6)],
       [const Color(0xFFF59E0B), const Color(0xFFEF4444)],
     ];
-    
+
     final gradient = gradients[index % gradients.length];
-    
-    return GlassmorphicCard(
+
+    return PremiumGlassmorphicCard(
+      isHoverable: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Project Header
           Row(
             children: [
               Container(
@@ -113,7 +120,7 @@ class ProjectsSection extends StatelessWidget {
                   size: 24,
                 ),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: 16), // ORGANIZED: Consistent spacing
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,9 +129,9 @@ class ProjectsSection extends StatelessWidget {
                       project.title,
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: const Color(0xFF1E293B),
                       ),
                     ),
+                    const SizedBox(height: 4), // ORGANIZED: Small spacing
                     Text(
                       project.role,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -151,15 +158,18 @@ class ProjectsSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 16), // ORGANIZED: Content spacing
+
+          // Project Description
           Text(
             project.description,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               height: 1.5,
-              color: const Color(0xFF475569),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 16), // ORGANIZED: Content spacing
+
+          // Technologies
           Wrap(
             spacing: 8,
             runSpacing: 8,
@@ -185,11 +195,10 @@ class ProjectsSection extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().slideX(
-      begin: 0.3,
-      delay: Duration(milliseconds: 100 * index),
+    ).animate(delay: Duration(milliseconds: 200 + index * 100)).slideY(
+      begin: 30,
       duration: 600.ms,
       curve: Curves.easeOutCubic,
-    );
+    ).fadeIn(duration: 400.ms);
   }
 }

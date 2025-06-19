@@ -46,13 +46,11 @@ class ContactSection extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.fromLTRB(24, 100, 24, 24), // FIXED: Top padding for app bar
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 20),
-            
-            // Header Card
+            // HEADER SECTION
             PremiumGlassmorphicCard(
               child: Row(
                 children: [
@@ -70,7 +68,7 @@ class ContactSection extends StatelessWidget {
                       size: 28,
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: 16), // ORGANIZED: Consistent spacing
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,6 +79,7 @@ class ContactSection extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        const SizedBox(height: 4), // ORGANIZED: Small spacing
                         Text(
                           'Let\'s connect and collaborate',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -93,24 +92,24 @@ class ContactSection extends StatelessWidget {
                 ],
               ),
             ).animate().fadeIn(duration: 400.ms),
-            
-            const SizedBox(height: 32),
-            
-            // Contact Methods
+
+            const SizedBox(height: 24), // ORGANIZED: Section spacing
+
+            // CONTACT METHODS
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: contactMethods.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 20),
+              separatorBuilder: (context, index) => const SizedBox(height: 16), // ORGANIZED: Consistent spacing
               itemBuilder: (context, index) {
                 final contact = contactMethods[index];
                 return _buildContactCard(context, contact, index);
               },
             ),
-            
-            const SizedBox(height: 32),
-            
-            // Call to Action
+
+            const SizedBox(height: 24), // ORGANIZED: Section spacing
+
+            // CALL TO ACTION
             PremiumGlassmorphicCard(
               isHoverable: true,
               child: Column(
@@ -136,7 +135,7 @@ class ContactSection extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 20), // ORGANIZED: Content spacing
                   Text(
                     'Let\'s Build Something Amazing Together!',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -144,7 +143,7 @@ class ContactSection extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 12), // ORGANIZED: Content spacing
                   Text(
                     'I\'m always excited to work on innovative projects and collaborate with talented individuals.',
                     style: Theme.of(context).textTheme.bodyLarge,
@@ -158,6 +157,8 @@ class ContactSection extends StatelessWidget {
               duration: 600.ms,
               curve: Curves.easeOutCubic,
             ),
+
+            const SizedBox(height: 40), // ORGANIZED: Bottom padding
           ],
         ),
       ),
@@ -185,7 +186,7 @@ class ContactSection extends StatelessWidget {
               size: 28,
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: 16), // ORGANIZED: Consistent spacing
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,7 +197,7 @@ class ContactSection extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 4), // ORGANIZED: Small spacing
                 Text(
                   contact['subtitle'] as String,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -220,12 +221,11 @@ class ContactSection extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().slideX(
+    ).animate(delay: Duration(milliseconds: 200 + index * 100)).slideX(
       begin: 0.3,
-      delay: Duration(milliseconds: 100 * index),
       duration: 600.ms,
       curve: Curves.easeOutCubic,
-    );
+    ).fadeIn(duration: 400.ms);
   }
 
   Future<void> _launchUrl(String url) async {
